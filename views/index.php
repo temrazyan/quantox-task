@@ -8,6 +8,21 @@
     <title>School</title>
 </head>
 <body>
-<h1 style="text-align: center">Hello World!</h1>
+<h1 style="text-align: center">Welcome!!!</h1>
+<h2>Our School Lists</h2>
+<?foreach ($schools as $school): ?>
+    <h5 style="text-transform: uppercase"><?=$school->getName()?></h5>
+    <p>School Students List:</p>
+
+    <?php if (!isset($students[$school->getId()])): ?>
+        <?php continue; ?>
+    <?php endif;?>
+
+    <ul>
+        <?foreach ($students[$school->getId()] as $student):?>
+            <li><a href="/student?id=<?= $student->getId(); ?>"><?= $student->getName() ?></a></li>
+        <?endforeach;?>
+    </ul>
+<?endforeach;?>
 </body>
 </html>

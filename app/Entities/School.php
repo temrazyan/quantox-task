@@ -70,7 +70,7 @@ class School
      */
     public function getPassGradeQuantities(): ?int
     {
-        return $this->passGradQuantities;
+        return $this->passGradeQuantities;
     }
 
     /**
